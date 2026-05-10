@@ -1,0 +1,130 @@
+/* =========================================
+   MISSION 1: Layout Fix (Border Box)
+   ========================================= */
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    background: #0f172a; /* Naya Dark Blue Theme */
+    color: #f8fafc; 
+    font-family: 'Inter', sans-serif; 
+    display: flex; 
+    flex-direction: column; /* Menu mathi ra Cards muni rakhna */
+    align-items: center; 
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* =========================================
+   WEEK 7: [Step 1] Navigation Menu (Flexbox)
+   ========================================= */
+.nav-menu {
+    display: flex;              /* Flexbox activate gareko */
+    justify-content: space-evenly; /* Buttons bich barabar space */
+    width: 100%;
+    max-width: 800px;
+    background: #1e293b;
+    padding: 18px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.nav-menu a {
+    color: #38bdf8; 
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+/* =========================================
+   WEEK 7: [Step 2] Horizontal Layout Wrapper
+   ========================================= */
+.content-wrapper {
+    display: flex;        /* Cards lai side-by-side rakhna */
+    gap: 40px;            /* Cards bich ko space */
+    flex-wrap: wrap;      /* Mobile maa auto wrap hunchha */
+    justify-content: center;
+}
+
+/* MISSION 1: Box Model Properties */
+.card { 
+    background: #1e293b; 
+    padding: 40px; 
+    border-radius: 24px; 
+    text-align: center; 
+    border: 1px solid #334155; 
+    width: 350px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Hover garda sarsari mathi sarchha */
+}
+
+/* =========================================
+   WEEK 7: [Step 3] Responsive Image Fix
+   ========================================= */
+.profile-img {
+    /* width: 130px; <--- Fixed size commented for Requirement */
+    max-width: 100%;  
+    height: auto;
+    width: 130px; /* Base size for alignment */
+    border-radius: 50%;
+    margin-bottom: 25px;
+    border: 3px solid #38bdf8;
+    padding: 5px;
+    object-fit: cover;
+}
+
+#profile-name { 
+    font-size: 28px; 
+    color: #ffffff; 
+    margin-bottom: 10px;
+}
+
+.info { 
+    text-align: left;
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.info p { 
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* Colorful Text Classes (Mission 1 Requirements) */
+.email-text { color: #ff4b5c; }
+.phone-text { color: #00f3ff; }
+.address-text { color: #ffcc00; }
+
+.bio { 
+    font-size: 14px; 
+    line-height: 1.6; 
+    color: #94a3b8; 
+    margin-bottom: 25px; 
+}
+
+.btn {
+    background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn:hover { opacity: 0.9; }
