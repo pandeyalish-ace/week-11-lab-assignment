@@ -1,73 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alish Pandey | Cyber Portfolio</title>
-    <!-- Linking the external CSS style sheet -->
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alish Pandey | Week 07 Portfolio</title>
+    <style>
+        /* MISSION 1: Layout Fix */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body { 
+            background: #0f172a; /* Naya Dark Professional Theme */
+            color: #f8fafc; 
+            font-family: 'Inter', sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* [Step 1] WEEK 7: Navigation Alignment (Flexbox) */
+        .nav-menu {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            max-width: 800px;
+            background: #1e293b;
+            padding: 18px;
+            margin-bottom: 50px;
+            border-radius: 15px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .nav-menu a {
+            color: #38bdf8; 
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        /* [Step 2] WEEK 7: Horizontal Layout Wrapper */
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Card Styling */
+        .card { 
+            background: #1e293b; 
+            padding: 40px; 
+            border-radius: 24px; 
+            text-align: center; 
+            border: 1px solid #334155; 
+            width: 350px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* [Step 3] WEEK 7: Responsive Image Fix */
+        .profile-img {
+            /* width: 130px; <--- Fixed size commented for Professor's Requirement */
+            max-width: 100%;  
+            height: auto;
+            width: 130px; 
+            border-radius: 50%;
+            margin-bottom: 25px;
+            border: 3px solid #38bdf8;
+            padding: 5px;
+            object-fit: cover;
+        }
+
+        #profile-name { 
+            font-size: 28px; 
+            color: #ffffff; 
+            margin-bottom: 10px;
+        }
+
+        .info { 
+            text-align: left;
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .info p { 
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        /* Custom Colors */
+        .email-text { color: #ff4b5c; }
+        .phone-text { color: #00f3ff; }
+        .address-text { color: #ffcc00; }
+
+        .bio { 
+            font-size: 14px; 
+            line-height: 1.6; 
+            color: #94a3b8; 
+            margin-bottom: 25px; 
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .btn:hover { opacity: 0.9; }
+    </style>
 </head>
 <body>
 
-    <!-- HUD Navigation Frame with Active Smooth Scrolling Links -->
-    <nav class="nav-menu">
-        <a href="#identity">Identity</a>
-        <a href="#hobbies">Hobbies Deck</a>
-        <a href="#profile">Core Metrics</a>
-        <button id="theme-toggle">☀️ Light Matrix</button>
-    </nav>
+    <nav class="nav-menu">
+        <a href="#">About Alish</a>
+        <a href="#">Ma Tapai Hami</a>
+        <a href="#">Skills</a>
+        <a href="#">Contact</a>
+    </nav>
 
-    <!-- UI Component Grid Layout Wrapper -->
-    <div class="content-wrapper">
-        
-        <!-- Card 1: Identity & Location Status -->
-        <div class="card" id="identity">
-            <img src="1000022487.jpg" alt="Alish Pandey Profile" class="profile-img">
-            <h1>Alish Pandey</h1>
-            <div class="info-panel">
-                <p class="tag-orange">&gt; LOC: Bucheon Sosa, KR</p>
-                <p class="tag-cyan">&gt; EDU: Seoul Theological University</p>
-                <p class="tag-magenta">&gt; TRACK: Computer Engineering</p>
-            </div>
-            <p>Undergraduate analyst currently living in Bucheon Sosa and studying at Seoul Theological University. Engineering computational architectures and modern digital layouts.</p>
-            <button class="btn-action">Initiate Communication</button>
-        </div>
+    <div class="content-wrapper">
+        
+        <div class="card">
+            <img src="alish.png" alt="Alish Pandey" class="profile-img">
+            <h1 id="profile-name">Alish Pandey</h1>
+            
+            <div class="info">
+                <p class="email-text">📧 alishpandey304@gmail.com</p>
+                <p class="phone-text">📱 010-5927-4941</p>
+                <p class="address-text">📍 Bucheon-si, Gyeonggi-do</p>
+            </div>
+            
+            <p class="bio">Computer Engineering student and aspiring Python developer. I focus on building clean, modern, and efficient digital solutions.</p>
+            <button class="btn">Connect With Me</button>
+        </div>
 
-        <!-- Card 2: Interactive Swiping Array Node Deck -->
-        <div class="hobby-showcase" id="hobbies">
-            <h2>Hobby Showcase</h2>
-            <p>Real-Time Array Synchronization Engine</p>
-            
-            <!-- Dynamic Canvas Window Element -->
-            <img id="gallery-img" src="1000023614.jpg" alt="Active Hobby State Asset" class="image-frame">
-            
-            <button id="next-btn" class="btn-cycle">Next Activity ➔</button>
+        <div class="card">
+            <img src="logo.png" alt="Sundar Nepal" class="profile-img">
+            <h1 id="profile-name">Ma Tapai Hami</h1>
+            
+            <div class="info">
+                <p style="color: #ffcc00;">🇳🇵 Vision: Sundar Nepal</p>
+                <p style="color: #38bdf8;">🎨 Creative Arts & Social Welfare</p>
+                <p style="color: #f8fafc;">🤝 Group Effort for Change</p>
+            </div>
+            
+            <p class="bio">A collective organization where we contribute our time and creative skills to build a "Better Nepal" through arts and welfare.</p>
+            <button class="btn">Join Our Mission</button>
+        </div>
 
-            <!-- 1:1 Index Matching Dynamic Output Box -->
-            <div class="loop-display-box">
-                <div class="loop-header">// Program Loop Live Buffer Output</div>
-                <ul id="dynamic-hobby-list">
-                    <!-- JavaScript dynamically injects elements here -->
-                </ul>
-            </div>
-        </div>
+    </div>
 
-        <!-- Card 3: Personality Matrix Profiler -->
-        <div class="card" id="profile">
-            <img src="logo.png" alt="System Identifier Core Brand" class="profile-img">
-            <h2>Personality Matrix</h2>
-            <div class="info-panel">
-                <p class="tag-lime">&gt; BEHAVIOR: Analytical & Focused</p>
-                <p class="tag-cyan">&gt; METRIC: Fast Learner & Adaptable</p>
-                <p class="tag-magenta">&gt; SYNERGY: Team Leader & Collaborator</p>
-            </div>
-            <p>Driven by logic problems and collaborative programming goals. Maintaining an analytical mindset under pressure while organizing community operations for the Ma Tapai Hami initiative.</p>
-            <button class="btn-action">Download Metrics</button>
-        </div>
-
-    </div>
-
-    <!-- External script setup linking to your dedicated JS file -->
-    <script src="script.js"></script>
 </body>
 </html>
